@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>레이아웃5 - grid</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            #header {
+                height: 100px;
+                background-color: rgb(105, 104, 104);
+            }
+            #nav {
+                height: 100px;
+                background-color: rgb(73, 75, 73);
+            }
+            #footer {
+                height: 100px;
+                background-color: black;
+            }
+            .container {
+                background-color: #0000003d;
+                width: 1200px;
+                height: inherit;
+                margin: 0 auto;
+            }
+
+            /* main */
+            .contents {
+                display: grid;
+                grid-template-areas:
+                    "cont01 cont01"
+                    "cont02 cont02"
+                    "cont03 cont04";
+                grid-template-columns: 50% 50%;
+                grid-template-rows: 100px 200px 480px;
+            }
+            .contents .cont01 {
+                grid-area: cont01;
+                background-color: blue;
+            }
+            .contents .cont02 {
+                grid-area: cont02;
+                background-color: rgb(200, 200, 226);
+            }
+            .contents .cont03 {
+                grid-area: cont03;
+                background-color: rgb(9, 163, 235);
+            }
+            .contents .cont04 {
+                grid-area: cont04;
+                background-color: rgb(115, 115, 196);
+            }
+
+            /* 노트북, 데스크탑 */
+            @media (max-width: 1300px) {
+                .container {
+                    width: 90%;
+                }
+                .contents {
+                    grid-template-areas:
+                        "cont01 cont02 cont02"
+                        "cont01 cont03 cont04";
+                    grid-template-columns: 30% 35% 35%;
+                    grid-template-rows: 300px 300px;
+                }
+                /* grid-template-columns: repeat(3, 1fr) */
+                /* grid-template-rows: repeat(2, 390px) */
+            }
+
+            /* 태블릿 */
+            @media (max-width: 768px) {
+                .container {
+                    width: 100%;
+                }
+                .contents {
+                    grid-template-areas:
+                        "cont01 cont02"
+                        "cont01 cont03"
+                        "cont01 cont04";
+                    grid-template-columns: 30% 70%;
+                    grid-template-rows: repeat(3, 260px);
+                }
+            }
+
+            /* 모바일 */
+            @media (max-width: 480px) {
+                .contents {
+                    grid-template-areas:
+                        "cont01"
+                        "cont02"
+                        "cont03"
+                        "cont04";
+                    grid-template-columns: 100%;
+                    grid-template-rows: 200px 200px 200px 200px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header">
+            <div class="container"></div>
+        </div>
+        <div id="nav">
+            <div class="container"></div>
+        </div>
+        <div id="main">
+            <div class="container contents">
+                <div class="cont01"></div>
+                <div class="cont02"></div>
+                <div class="cont03"></div>
+                <div class="cont04"></div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="container"></div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                background-color: white;
+            }
+            #container {
+                width: 1200px;
+                margin: 0 auto;
+
+                display: grid;
+                grid-template-areas:
+                    "header header"
+                    "nav nav"
+                    "aside section"
+                    "footer footer";
+                grid-template-columns: 33% 67%;
+                grid-template-rows: 100px 100px 780px 100px;
+            }
+            #header {
+                background-color: green;
+                grid-area: header;
+            }
+            #nav {
+                background-color: yellow;
+                grid-area: nav;
+            }
+            #aside {
+                background-color: blue;
+                grid-area: aside;
+            }
+            #section {
+                background-color: black;
+                grid-area: section;
+            }
+            #footer {
+                background-color: green;
+                grid-area: footer;
+            }
+
+            /* 미디어 쿼리 */
+            /* 노트북, 데스크탑 */
+            @media (max-width: 1300px) {
+                #container {
+                    width: 90%;
+                }
+            }
+
+            /* 태블릿 */
+            @media (max-width: 768px) {
+                #container {
+                    width: 100%;
+                }
+            }
+
+            /* 모바일 */
+            @media (max-width: 480px) {
+                #container {
+                    display: grid;
+                    grid-template-areas:
+                        "header"
+                        "nav"
+                        "aside"
+                        "section"
+                        "footer";
+                    grid-template-columns: 100%;
+                    grid-template-rows: 100px 100px 300px 480px 100px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <header id="header"></header>
+            <nav id="nav"></nav>
+            <aside id="aside"></aside>
+            <section id="section"></section>
+            <footer id="footer"></footer>
+        </div>
+    </body>
+</html>

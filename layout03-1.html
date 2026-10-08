@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>flex</title>
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                background-color: rgb(194, 190, 190);
+            }
+
+            #container {
+                width: 800px;
+                margin: 0 auto;
+            }
+
+            #header {
+                width: 100%;
+                height: 100px;
+                background-color: rgb(40, 235, 218);
+            }
+
+            #nav {
+                width: 100%;
+                height: 100px;
+                background-color: #4862f7;
+            }
+
+            #main {
+                width: 100%;
+                height: auto;
+                background-color: #9b0f0f;
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            #aside {
+                width: 20%;
+                height: 800px;
+                background-color: #98ee0e;
+            }
+
+            #section {
+                width: 80%;
+                height: auto;
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            #article1 {
+                width: 100%;
+                height: 300px;
+                background-color: #269718;
+                display: block;
+            }
+
+            #article2 {
+                width: 100%;
+                height: 250px;
+                background-color: #1a461c;
+                display: block;
+            }
+
+            #article3 {
+                width: 100%;
+                height: 250px;
+                background-color: #338037;
+                display: flex;
+            }
+
+            #footer {
+                width: 100%;
+                height: 100px;
+                background-color: #000000;
+            }
+
+            /* 노트북 */
+
+            @media (max-width: 1300px) {
+                #container {
+                    width: 90%;
+                }
+
+                #aside {
+                    width: 20%;
+                    height: 800px;
+                }
+
+                #section {
+                    width: 80%;
+                }
+
+                #article1 {
+                    width: 100%;
+                    height: 400px;
+                }
+
+                #article2 {
+                    width: 50%;
+                    height: 400px;
+                }
+
+                #article3 {
+                    width: 50%;
+                    height: 400px;
+                }
+            }
+
+            /* 태블릿 */
+
+            @media (max-width: 768px) {
+                #container {
+                    width: 90%;
+                }
+
+                #aside {
+                    width: 20%;
+                    height: 800px;
+                }
+
+                #section {
+                    width: 80%;
+                }
+
+                #article1 {
+                    width: 100%;
+                    height: 400px;
+                }
+
+                #article2 {
+                    width: 100%;
+                    height: 400px;
+                }
+
+                #article3 {
+                    display: none;
+                }
+            }
+
+            /* 모바일 */
+
+            @media (max-width: 480px) {
+                #aside {
+                    width: 100%;
+                    height: 100px;
+                }
+
+                #section {
+                    width: 100%;
+                }
+
+                #article1 {
+                    width: 100%;
+                    height: 200px;
+                }
+
+                #article2 {
+                    width: 100%;
+                    height: 200px;
+                }
+
+                #article3 {
+                    display: none;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="container">
+            <header id="header">header</header>
+
+            <nav id="nav">nav</nav>
+
+            <main id="main">
+                <aside id="aside">aside</aside>
+
+                <section id="section">
+                    <article1 id="article1"> article1 </article1>
+
+                    <article2 id="article2"> article2 </article2>
+
+                    <article3 id="article3"> article3 </article3>
+                </section>
+            </main>
+
+            <footer id="footer">footer</footer>
+        </div>
+    </body>
+</html>
